@@ -1,4 +1,4 @@
-import setSkill from '../index';
+import getSkill from '../index';
 
 const character = {
   name: 'Лучник',
@@ -22,8 +22,8 @@ const character = {
   ],
 };
 
-test('set Skill', () => {
-  const result = setSkill(character, 9);
+test('get Skill', () => {
+  const result = getSkill(character, 9);
   expect(result).toEqual({
     id: 9,
     name: 'Нокаутирующий удар',
@@ -32,7 +32,7 @@ test('set Skill', () => {
   });
 });
 
-test('set not found Skill', () => {
-  const result = setSkill(character, 10);
-  expect(result).toBe(null);
+test('get not found Skill', () => {
+  const result = getSkill(character, 10);
+  expect(result).toEqual({});
 });
