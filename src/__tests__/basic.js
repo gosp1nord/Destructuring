@@ -23,16 +23,19 @@ const character = {
 };
 
 test('get Skill', () => {
-  const result = getSkill(character, 9);
-  expect(result).toEqual({
-    id: 9,
-    name: 'Нокаутирующий удар',
-    icon: 'http://...',
-    description: 'Описание недоступно',
-  });
-});
-
-test('get not found Skill', () => {
-  const result = getSkill(character, 10);
-  expect(result).toEqual({});
+  const result = getSkill(character);
+  expect(result).toEqual([
+    {
+      id: 8,
+      name: 'Двойной выстрел',
+      icon: 'http://...',
+      description: 'Двойной выстрел наносит двойной урон',
+    },
+    {
+      id: 9,
+      name: 'Нокаутирующий удар',
+      icon: 'http://...',
+      description: 'Описание недоступно',
+    },
+  ]);
 });
